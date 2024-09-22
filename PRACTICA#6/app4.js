@@ -1,48 +1,54 @@
-// Ejemplo que muestra el nombre del mes basado en el numero del mes
-let numeroMes = 13;
-let nombreMes = ""
 
-// Usamos la estructura 'switch' para asignar el nombre correspondiente
+const readline = require('readline');
 
-switch (numeroMes) {
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Ingresa un número del 1 al 12: ', (input) => {
+  const numeroMes = parseInt(input);
+
+  switch (numeroMes) {
     case 1:
-        nombreMes = "Enero"
-        break;
+      console.log('Enero');
+      break;
     case 2:
-        nombreMes = "Febrero"
-        break;
+      console.log('Febrero');
+      break;
     case 3:
-        nombreMes = "Marzo"
-        break;
+      console.log('Marzo');
+      break;
     case 4:
-        nombreMes = "Abril"
-        break;
+      console.log('Abril');
+      break;
     case 5:
-        nombreMes = "Mayo"
-        break;
+      console.log('Mayo');
+      break;
     case 6:
-        nombreMes = "Junio"
-        break;
+      console.log('Junio');
+      break;
     case 7:
-        nombreMes = "Julio"
-        break
+      console.log('Julio');
+      break;
     case 8:
-        nombreMes = "Agosto"
-        break;
+      console.log('Agosto');
+      break;
     case 9:
-        nombreMes = "Septiembre"
-        break;
+      console.log('Septiembre');
+      break;
     case 10:
-        nombreMes = "Octubre"
-        break;
+      console.log('Octubre');
+      break;
     case 11:
-        nombreMes = "Noviembre"
-        break;
+      console.log('Noviembre');
+      break;
     case 12:
-        nombreMes = "Diciembre"
+      console.log('Diciembre');
+      break;
     default:
-        nombreMes = "Mes no valido"
-        break;
-}
+      console.log('Número no válido. Ingresa un número del 1 al 12.');
+  }
 
-console.log(`El mes es: ${nombreMes}`)
+  rl.close();
+});
