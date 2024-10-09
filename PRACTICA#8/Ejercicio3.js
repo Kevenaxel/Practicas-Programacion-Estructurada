@@ -1,27 +1,34 @@
-// requerimos el modulo readline para manejar la entrada y salida  en la consola
 const readline = require('readline');
 
-// Creamos la interfaz de readline
+// Crear una interfaz de readline para la entrada de usuario
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// Definimos la contrasena correcta
-const contrasenaCorrecta= "1234";
+// Preguntar al usuario por la cadena
+rl.question('Introduce una cadena de texto: ', (cadena) => {
+    // Preguntar al usuario por la letra a buscar
+    rl.question('Introduce la letra a contar: ', (letraABuscar) => {
+        // Inicializamos el contador de letras
+        let contadorLetras = 0;
+        let posicion = 0;
 
-// Funcion para pedir la contrasena al usuario
-function pedirContrasena() {
-    rl.question("Introduce la contrasena: ", (contrasenaIntroducida) =>{
-        if (contrasenaIntroducida !== contrasenaCorrecta) {
-            conmsole.console.log("Contrasena Incorrecta. Intentalo de nuevo.");
-            pedirContrasena(); // Volvemos a pedir la contrasena
-        }else {
-            console.log("Bienvenido! Has introducido la contrasena correcta.");
-            rl.close();
-        }
-    })
-}
+        // Usamos un bucle do...while para recorrer toda la cadena
+        do {
+            // Si encontramos la letra que buscamos (ignorando mayúsculas y minúsculas), incrementamos el contador
+            if (cadena[posicion].toLowerCase() == letraABuscar.toLowerCase()) {
+                contadorLetras++;
+            }
+            // Pasamos a la siguiente posición
+            posicion++;
+        } while (posicion < cadena.length);
 
-// Llamamos a la funcion para iniciar el bucle
-pedirContrasena();
+        // Mostramos el número de veces que aparece la letra
+        console.log(`La letra "${letraABuscar}" aparece ${contadorLetras} veces en la cadena.`);
+
+        // Cerrar la interfaz readline
+        rl.close();
+    });
+});
+
