@@ -1,13 +1,8 @@
 [
   {
-    "titulo": "Cien anos de soledad",
-    "autor": "Gabriel Garcia Marquez",
-    "disponible": true
-  },
-  {
     "titulo": "Don Quijote de la Mancha",
     "autor": "Miguel de Cervantes",
-    "disponible": false
+    "disponible": true
   },
   {
     "titulo": "Orgullo y prejuicio",
